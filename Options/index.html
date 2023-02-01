@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Velo</title>
+<link rel="icon" href="../favicon.svg">
+<link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+<header>
+	<nav>
+		<a class="logo" href="../"><h1>Velo</h1><span>v0.1</span></a>
+		<ul class="navList">
+			<li class="navItem skewBtn"><a href="../Futures">Futures</a></li>
+			<li class="navItem skewBtn selected"><a href="../Options">Options</a></li>
+			<li class="navItem disabled"><span>Spot</span><div class="tooltip">Coming Soon...</div></li>
+			<li class="navItem disabled"><span>On-chain</span><div class="tooltip">Coming Soon...</div></li>
+			<li class="navItem skewBtn updatesBtn"><span>Updates</span></li>
+		</ul>
+		<div id="loginSignup">
+			<button class="login btn1" type="button">Login</button>
+			<button class="signup btn1" type="button">Signup</button>
+		</div>
+		<button class="menuBtn" type="button" style="display: none;"></button>
+	</nav>
+</header>
+<main>
+	<section>
+		<div class="sectionHeader">
+			<div class="coinToggle toggleButtons">
+				<button class="toggleBTC"></button>
+				<button class="toggleETH"></button>
+				<div class="toggleHighlight" style="left:0px;"></div>
+			</div>
+		</div>
+		<div class="widgetGrid grid4x4" data-cols="4" data-rows="4">
+			<div class="widget h2 w2" data-id="1" data-h="2" data-w="2" data-c="1" data-r="1"><div id="lineChart1" class="chartContainer"></div></div>
+			<div class="widget h2 w2" data-id="2" data-h="2" data-w="2" data-c="3" data-r="1"><div id="lineChart2" class="chartContainer"></div></div>
+			<div class="widget h2 w2" data-id="3" data-h="2" data-w="2" data-c="1" data-r="3"><div id="lineChart3" class="chartContainer"></div></div>
+			<div class="widget h1 w2" data-id="4" data-h="1" data-w="2" data-c="3" data-r="3"><div id="columnChart1" class="chartContainer"></div></div>
+			<div class="widget h1 w2" data-id="5" data-h="1" data-w="2" data-c="3" data-r="4"><div id="columnChart2" class="chartContainer"></div></div>
+		</div>
+	</section>
+</main>
+<div class="accountModal" style="display: none;">
+	<i class="accountIcon"></i>
+	<div class="toggleButtons">
+		<button class="toggleLogin selected">Login</button>
+		<button class="toggleSignup">Signup</button>
+		<div class="toggleHighlight"></div>
+	</div>
+	<form class="loginForm" onsubmit="return false;">
+		<div class="inputWrap">
+			<input id="username" type="text">
+			<label id="usernameLabel" for="username">Username</label>
+		</div>
+			<div class="inputWrap">
+			<input id="password" type="password">
+			<label id="passwordLabel" for="password">Password</label>
+		</div>
+		<button type="submit" disabled>Login</button>
+	</form>
+</div>
+<div class="backdrop" style="display: none;"></div>
+<script type="text/javascript" src="../jquery-3.6.1.min.js"></script>
+<script type="text/javascript" src="../script.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script type="text/javascript" src="../chartTheme.js"></script>
+<script>
+
+Highcharts.chart('lineChart1', {
+	title: {
+		text: 'Line Chart 1'
+	},
+	series: [{
+		name: 'Dataset 1',
+		data: [43934, 48656, 65165, 81827, 112143, 142383,
+		  171533, 165174, 155157, 161454, 154610]
+	  }, {
+		name: 'Dataset 2',
+		data: [24916, 37941, 29742, 29851, 32490, 30282,
+		  38121, 36885, 33726, 34243, 31050]
+	  }, {
+		name: 'Dataset 3',
+		data: [11744, 30000, 16005, 19771, 20185, 24377,
+		  32147, 30912, 29243, 29213, 25663]
+	  }, {
+		name: 'Dataset 4',
+		data: [null, null, null, null, null, null, null,
+		  null, 11164, 11218, 10077]
+	  }, {
+		name: 'Other',
+		data: [21908, 5548, 8105, 11248, 8989, 11816, 18274,
+		  17300, 13053, 11906, 10073]
+	  }]
+});
+
+Highcharts.chart('lineChart2', {
+	title: {
+		text: 'Line Chart 2'
+	},
+	series: [{
+		name: 'Dataset 1',
+		data: [43934, 48656, 65165, 81827, 112143, 142383,
+		  171533, 165174, 155157, 161454, 154610]
+	  }, {
+		name: 'Dataset 2',
+		data: [24916, 37941, 29742, 29851, 32490, 30282,
+		  38121, 36885, 33726, 34243, 31050]
+	  }, {
+		name: 'Dataset 3',
+		data: [11744, 30000, 16005, 19771, 20185, 24377,
+		  32147, 30912, 29243, 29213, 25663]
+	  }, {
+		name: 'Dataset 4',
+		data: [null, null, null, null, null, null, null,
+		  null, 11164, 11218, 10077]
+	  }, {
+		name: 'Other',
+		data: [21908, 5548, 8105, 11248, 8989, 11816, 18274,
+		  17300, 13053, 11906, 10073]
+	  }]
+});
+
+Highcharts.chart('lineChart3', {
+	title: {
+		text: 'Line Chart 3'
+	},
+	series: [{
+		name: 'Dataset 1',
+		data: [43934, 48656, 65165, 81827, 112143, 142383,
+		  171533, 165174, 155157, 161454, 154610]
+	  }, {
+		name: 'Dataset 2',
+		data: [24916, 37941, 29742, 29851, 32490, 30282,
+		  38121, 36885, 33726, 34243, 31050]
+	  }, {
+		name: 'Dataset 3',
+		data: [11744, 30000, 16005, 19771, 20185, 24377,
+		  32147, 30912, 29243, 29213, 25663]
+	  }, {
+		name: 'Dataset 4',
+		data: [null, null, null, null, null, null, null,
+		  null, 11164, 11218, 10077]
+	  }, {
+		name: 'Other',
+		data: [21908, 5548, 8105, 11248, 8989, 11816, 18274,
+		  17300, 13053, 11906, 10073]
+	  }]
+});
+
+Highcharts.chart('columnChart1', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Column Chart 1'
+    },
+    xAxis: {
+        categories: [
+            'Jan',
+            'Feb',
+            'Mar',
+            'Apr',
+            'May',
+            'Jun',
+            'Jul',
+            'Aug',
+            'Sep',
+            'Oct',
+            'Nov',
+            'Dec'
+        ],
+        crosshair: true
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Rainfall (mm)'
+        }
+    },
+    plotOptions: {
+        column: {
+            pointPadding: 0.2,
+            borderWidth: 0
+        }
+    },
+    series: [{
+        name: 'Tokyo',
+        data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4,
+            194.1, 95.6, 54.4]
+
+    }, {
+        name: 'New York',
+        data: [83.6, 78.8, 98.5, 93.4, 106.0, 84.5, 105.0, 104.3, 91.2, 83.5,
+            106.6, 92.3]
+
+    }, {
+        name: 'London',
+        data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2, 59.3,
+            51.2]
+
+    }, {
+        name: 'Berlin',
+        data: [42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 47.6, 39.1, 46.8,
+            51.1]
+
+    }]
+});
+
+Highcharts.chart('columnChart2', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Column Chart 2'
+    },
+    xAxis: {
+        categories: [
+            'Jan',
+            'Feb',
+            'Mar',
+            'Apr',
+            'May',
+            'Jun',
+            'Jul',
+            'Aug',
+            'Sep',
+            'Oct',
+            'Nov',
+            'Dec'
+        ],
+        crosshair: true
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Rainfall (mm)'
+        }
+    },
+    plotOptions: {
+        column: {
+            pointPadding: 0.2,
+            borderWidth: 0
+        }
+    },
+    series: [{
+        name: 'Tokyo',
+        data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4,
+            194.1, 95.6, 54.4]
+
+    }, {
+        name: 'New York',
+        data: [83.6, 78.8, 98.5, 93.4, 106.0, 84.5, 105.0, 104.3, 91.2, 83.5,
+            106.6, 92.3]
+
+    }, {
+        name: 'London',
+        data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2, 59.3,
+            51.2]
+
+    }, {
+        name: 'Berlin',
+        data: [42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 47.6, 39.1, 46.8,
+            51.1]
+
+    }]
+});
+</script>
+</body>
+</html>
