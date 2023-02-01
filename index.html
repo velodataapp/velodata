@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Velo</title>
+<link rel="icon" href="favicon.svg">
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<header>
+	<nav>
+		<a class="logo" href=""><h1>Velo</h1><span>v0.1</span></a>
+		<ul class="navList">
+			<li class="navItem skewBtn"><a href="./Futures">Futures</a></li>
+			<li class="navItem skewBtn"><a href="./Options">Options</a></li>
+			<li class="navItem disabled"><span>Spot</span><div class="tooltip">Coming Soon...</div></li>
+			<li class="navItem disabled"><span>On-chain</span><div class="tooltip">Coming Soon...</div></li>
+			<li class="navItem skewBtn updatesBtn"><span>Updates</span></li>
+		</ul>
+		<div id="loginSignup">
+			<button class="login btn1" type="button">Login</button>
+			<button class="signup btn1" type="button">Signup</button>
+		</div>
+		<button class="menuBtn" type="button" style="display: none;"></button>
+	</nav>
+</header>
+<main>
+	<div class="widgetGrid grid4x4" data-cols="4" data-rows="4">
+		<div class="widget h2 w2" data-id="1" data-h="2" data-w="2" data-c="1" data-r="1">
+			<!-- TradingView Widget BEGIN -->
+			<div class="tradingview-widget-container tvOuterWrap">
+				<div id="tradingview_64e2d" class="tvInnerWrap"></div>
+				<script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+				<script type="text/javascript">
+				new TradingView.widget(
+						{
+						"autosize": true,
+						"symbol": "BINANCE:BTCUSDT",
+						"interval": "D",
+						"timezone": "Etc/UTC",
+						"theme": "dark",
+						"style": "1",
+						"locale": "en",
+						"toolbar_bg": "#f1f3f6",
+						"enable_publishing": false,
+						"allow_symbol_change": true,
+						"container_id": "tradingview_64e2d"
+					}
+				);
+				</script>
+			</div>
+			<!-- TradingView Widget END -->
+		</div>
+		<div class="widget h1 w1" data-id="2" data-h="1" data-w="1" data-c="3" data-r="1"><div id="speedoChart1" class="chartContainer"></div></div>
+		<div class="widget h1 w1" data-id="3" data-h="1" data-w="1" data-c="4" data-r="1"><div id="speedoChart2" class="chartContainer"></div></div>
+		<div class="widget h1 w2" data-id="4" data-h="1" data-w="2" data-c="3" data-r="2"><div id="columnChart" class="chartContainer"></div></div>
+		<div class="widget h2 w2" data-id="5" data-h="2" data-w="2" data-c="1" data-r="3">
+			<div class="tableWrap">
+				<table class="col8">
+					<thead>
+						<tr>
+							<th>Exchange</th>
+							<th class="sorting desc">Pair</th>
+							<th>Price $</th>
+							<th>+/- %</th>
+							<th>Vol.</th>
+							<th>OI $</th>
+							<th>Funding %</th>
+							<th>Liqs $</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td data-val="Bybit">Bybit</td>
+							<td data-val="APTUSDT">APT/USDT</td>
+							<td data-val="18.2">18.2</td>
+							<td data-val="6.35">+6.35</td>
+							<td data-val="2140000">21.4m</td>
+							<td data-val="14400000">14.4m</td>
+							<td data-val="-0.25">-0.25</td>
+							<td data-val="15000000">15m</td>
+						</tr><tr>
+							<td data-val="Binance">Binance</td>
+							<td data-val="BNBUSDT">BNB/USDT</td>
+							<td data-val="234.8">234.8</td>
+							<td data-val="3.74">+3.74</td>
+							<td data-val="510100">510.1k</td>
+							<td data-val="12650000">12.65m</td>
+							<td data-val="0.021">0.021</td>
+							<td data-val="34000000">3.4m</td>
+						</tr><tr>
+							<td data-val="Binance">Binance</td>
+							<td data-val="BTCUSDT">BTC/USDT</td>
+							<td data-val="23500">23,500</td>
+							<td data-val="2.42">+2.42</td>
+							<td data-val="213700">213.7k</td>
+							<td data-val="21000000">21m</td>
+							<td data-val="0.01">0.01</td>
+							<td data-val="2000000">2m</td>
+						</tr><tr>
+							<td data-val="Bitfinex">Bitfinex</td>
+							<td data-val="DOGEUSDT">DOGE/USDT</td>
+							<td data-val="0.0857">0.0857</td>
+							<td data-val="4.69">+4.69</td>
+							<td data-val="721000000">721m</td>
+							<td data-val="11600000">11.6m</td>
+							<td data-val="0.03">0.03</td>
+							<td data-val="1670000">1.67m</td>
+						</tr><tr>
+							<td data-val="Binance">Binance</td>
+							<td data-val="ETHUSDT">ETH/USDT</td>
+							<td data-val="1600">1,600</td>
+							<td data-val="3.7">+3.7</td>
+							<td data-val="370000">370k</td>
+							<td data-val="16000000">16m</td>
+							<td data-val="0.02">0.02</td>
+							<td data-val="1300000">1.3m</td>
+						</tr><tr>
+							<td data-val="Coinbase">Coinbase</td>
+							<td data-val="LTCUSDT">LTC/USDT</td>
+							<td data-val="97.4">97.4</td>
+							<td data-val="4.26">+4.26</td>
+							<td data-val="1063000">1.063m</td>
+							<td data-val="12000000">12m</td>
+							<td data-val="0.026">0.026</td>
+							<td data-val="875000">875k</td>
+						</tr><tr>
+							<td data-val="Kraken">Kraken</td>
+							<td data-val="MATICUSDT">MATIC/USDT</td>
+							<td data-val="1.15">1.15</td>
+							<td data-val="7.21">+7.21</td>
+							<td data-val="31000000">31m</td>
+							<td data-val="4100000">4.1m</td>
+							<td data-val="0.01">0.01</td>
+							<td data-val="452000">452k</td>
+						</tr><tr>
+							<td data-val="Binance">Binance</td>
+							<td data-val="SOLUSDT">SOL/USDT</td>
+							<td data-val="23.8">23.8</td>
+							<td data-val="-1.6">-1.6</td>
+							<td data-val="9417000">941.7k</td>
+							<td data-val="13840000">13.84m</td>
+							<td data-val="0.012">0.012</td>
+							<td data-val="1320000">1.32m</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="widget h2 w2" data-id="6" data-h="2" data-w="2" data-c="3" data-r="3">
+			<div class="updatesWrap">
+				<div class="update">
+					<h3>First Update Title</h3>
+					<time>2023-01-30</time>
+					<button class="link" type="button"></button>
+					<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+				</div>
+				<div class="update">
+					<h3>Second Update Title</h3>
+					<time>2023-01-29</time>
+					<button class="link" type="button"></button>
+					<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+				</div>
+				<div class="update">
+					<h3>Third Update Title</h3>
+					<time>2023-01-28</time>
+					<button class="link" type="button"></button>
+					<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+				</div>
+				<div class="update">
+					<h3>Fourth Update Title</h3>
+					<time>2023-01-27</time>
+					<button class="link" type="button"></button>
+					<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+				</div>
+				<div class="update">
+					<h3>Fifth Update Title</h3>
+					<time>2023-01-26</time>
+					<button class="link" type="button"></button>
+					<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+				</div>
+				<div class="update">
+					<h3>Sixth Update Title</h3>
+					<time>2023-01-25</time>
+					<button class="link" type="button"></button>
+					<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+				</div>
+				<div class="update">
+					<h3>Seventh Update Title</h3>
+					<time>2023-01-24</time>
+					<button class="link" type="button"></button>
+					<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+				</div>
+				<div class="update">
+					<h3>Eighth Update Title</h3>
+					<time>2023-01-23</time>
+					<button class="link" type="button"></button>
+					<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+				</div>
+			</div>
+		</div>
+		<button class="editPanels" type="button"></button>
+	</div>
+</main>
+<div class="accountModal" style="display: none;">
+	<i class="accountIcon"></i>
+	<div class="toggleButtons">
+		<button class="toggleLogin selected">Login</button>
+		<button class="toggleSignup">Signup</button>
+		<div class="toggleHighlight"></div>
+	</div>
+	<form class="loginForm" onsubmit="return false;">
+		<div class="inputWrap">
+			<input id="username" type="text">
+			<label id="usernameLabel" for="username">Username</label>
+		</div>
+			<div class="inputWrap">
+			<input id="password" type="password">
+			<label id="passwordLabel" for="password">Password</label>
+		</div>
+		<button type="submit" disabled>Login</button>
+	</form>
+</div>
+<div class="backdrop" style="display: none;"></div>
+<script type="text/javascript" src="jquery-3.6.1.min.js"></script>
+<script type="text/javascript" src="script.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script type="text/javascript" src="chartTheme.js"></script>
+<script>
+Highcharts.chart('columnChart', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Column Chart'
+    },
+    xAxis: {
+        categories: [
+            'Jan',
+            'Feb',
+            'Mar',
+            'Apr',
+            'May',
+            'Jun',
+            'Jul',
+            'Aug',
+            'Sep',
+            'Oct',
+            'Nov',
+            'Dec'
+        ],
+        crosshair: true
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Rainfall (mm)'
+        }
+    },
+    plotOptions: {
+        column: {
+            pointPadding: 0.2,
+            borderWidth: 0
+        }
+    },
+    series: [{
+        name: 'Tokyo',
+        data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4,
+            194.1, 95.6, 54.4]
+
+    }, {
+        name: 'New York',
+        data: [83.6, 78.8, 98.5, 93.4, 106.0, 84.5, 105.0, 104.3, 91.2, 83.5,
+            106.6, 92.3]
+
+    }, {
+        name: 'London',
+        data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2, 59.3,
+            51.2]
+
+    }, {
+        name: 'Berlin',
+        data: [42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 47.6, 39.1, 46.8,
+            51.1]
+
+    }]
+});
+
+Highcharts.chart('speedoChart1', {
+
+chart: {
+	type: 'gauge',
+	plotBackgroundColor: null,
+	plotBackgroundImage: null,
+	plotBorderWidth: 0,
+	plotShadow: false,
+	height: '80%'
+},
+
+title: {
+	text: 'Speedometer'
+},
+
+pane: {
+	startAngle: -90,
+	endAngle: 89.9,
+	background: null,
+	center: ['50%', '75%'],
+	size: '110%'
+},
+
+// the value axis
+yAxis: {
+	min: 0,
+	max: 200,
+	tickPixelInterval: 72,
+	tickPosition: 'inside',
+	tickColor: Highcharts.defaultOptions.chart.backgroundColor || '#FFFFFF',
+	tickLength: 20,
+	tickWidth: 2,
+	minorTickInterval: null,
+	labels: {
+		distance: 20,
+		style: {
+			fontSize: '14px'
+		}
+	},
+	plotBands: [{
+		from: 0,
+		to: 120,
+		color: '#55BF3B', // green
+		thickness: 20
+	}, {
+		from: 120,
+		to: 160,
+		color: '#DDDF0D', // yellow
+		thickness: 20
+	}, {
+		from: 160,
+		to: 200,
+		color: '#DF5353', // red
+		thickness: 20
+	}]
+},
+
+series: [{
+	name: 'Speed',
+	data: [80],
+	tooltip: {
+		valueSuffix: ' km/h'
+	},
+	dataLabels: {
+		format: '{y} km/h',
+		borderWidth: 0,
+		color: (
+			Highcharts.defaultOptions.title &&
+			Highcharts.defaultOptions.title.style &&
+			Highcharts.defaultOptions.title.style.color
+		) || '#333333',
+		style: {
+			fontSize: '16px'
+		}
+	},
+	dial: {
+		radius: '80%',
+		backgroundColor: 'gray',
+		baseWidth: 12,
+		baseLength: '0%',
+		rearLength: '0%'
+	},
+	pivot: {
+		backgroundColor: 'gray',
+		radius: 6
+	}
+
+}]
+
+});
+
+// Add some life
+setInterval(() => {
+const chart = Highcharts.charts[0];
+if (chart && !chart.renderer.forExport) {
+	const point = chart.series[0].points[0],
+		inc = Math.round((Math.random() - 0.5) * 20);
+
+	let newVal = point.y + inc;
+	if (newVal < 0 || newVal > 200) {
+		newVal = point.y - inc;
+	}
+
+	point.update(newVal);
+}
+
+}, 3000);
+
+Highcharts.chart('speedoChart2', {
+
+chart: {
+	type: 'gauge',
+	plotBackgroundColor: null,
+	plotBackgroundImage: null,
+	plotBorderWidth: 0,
+	plotShadow: false,
+	height: '80%'
+},
+
+title: {
+	text: 'Speedometer'
+},
+
+pane: {
+	startAngle: -90,
+	endAngle: 89.9,
+	background: null,
+	center: ['50%', '75%'],
+	size: '110%'
+},
+
+// the value axis
+yAxis: {
+	min: 0,
+	max: 200,
+	tickPixelInterval: 72,
+	tickPosition: 'inside',
+	tickColor: Highcharts.defaultOptions.chart.backgroundColor || '#FFFFFF',
+	tickLength: 20,
+	tickWidth: 2,
+	minorTickInterval: null,
+	labels: {
+		distance: 20,
+		style: {
+			fontSize: '14px'
+		}
+	},
+	plotBands: [{
+		from: 0,
+		to: 120,
+		color: '#55BF3B', // green
+		thickness: 20
+	}, {
+		from: 120,
+		to: 160,
+		color: '#DDDF0D', // yellow
+		thickness: 20
+	}, {
+		from: 160,
+		to: 200,
+		color: '#DF5353', // red
+		thickness: 20
+	}]
+},
+
+series: [{
+	name: 'Speed',
+	data: [80],
+	tooltip: {
+		valueSuffix: ' km/h'
+	},
+	dataLabels: {
+		format: '{y} km/h',
+		borderWidth: 0,
+		color: (
+			Highcharts.defaultOptions.title &&
+			Highcharts.defaultOptions.title.style &&
+			Highcharts.defaultOptions.title.style.color
+		) || '#333333',
+		style: {
+			fontSize: '16px'
+		}
+	},
+	dial: {
+		radius: '80%',
+		backgroundColor: 'gray',
+		baseWidth: 12,
+		baseLength: '0%',
+		rearLength: '0%'
+	},
+	pivot: {
+		backgroundColor: 'gray',
+		radius: 6
+	}
+
+}]
+
+});
+
+// Add some life
+setInterval(() => {
+const chart = Highcharts.charts[1];
+if (chart && !chart.renderer.forExport) {
+	const point = chart.series[0].points[0],
+		inc = Math.round((Math.random() - 0.5) * 20);
+
+	let newVal = point.y + inc;
+	if (newVal < 0 || newVal > 200) {
+		newVal = point.y - inc;
+	}
+
+	point.update(newVal);
+}
+
+}, 3000);
+
+</script>
+</body>
+</html>
