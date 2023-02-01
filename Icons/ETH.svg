@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128px" height="128px" viewBox="0 0 128 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>ETH</title>
+    <g id="ETH" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M64.5,16 L94,65.3259669 L64.5,82.8287293 L35,65.3259669 L64.5,16 Z M94,71.160221 L64.5,112 L35,71.160221 L64.5,88.6629834 L94,71.160221 Z M64.5,112 L64.5,88.6629834" fill="#FFFFFF" fill-rule="nonzero"></path>
+    </g>
+</svg>
